@@ -5,6 +5,7 @@ A basic quiz generation and administration system. Built as a class project.
 Program flow always starts in [login.html].
 
 Instructor (quiz creation): [login.html]->[instructor.php]->[qentry.php]->[endsession.php]->(generated quiz)
+
 Student: (quiz administration): [login.html]->[student.php]->(specified quiz)->[grader.php]
 
 ## License
