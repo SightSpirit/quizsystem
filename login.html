@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function stuMode() { 
+			document.getElementById("passwordP").style.display = "none"; 
+			document.getElementById("instructorP").style.display = "block";
+		}
+		function insMode() {
+			document.getElementById("passwordP").style.display = "block";
+			document.getElementById("instructorP").style.display = "none";
+		}
+
+		function redirect() {
+			if (document.getElementById("sturadio").checked) {
+				document.getElementById("login_form").setAttribute("action","student.php");
+				document.getElementsByName("password")[0].required = false;
+				document.getElementsByName("instructor")[0].required = true;
+			}
+			if (document.getElementById("insradio").checked) {
+				document.getElementById("login_form").setAttribute("action","instructor.php");						document.getElementsByName("password")[0].required = true;
+				document.getElementsByName("instructor")[0].required = false;
+			}
+		}
+	</script>
+	<title>Login | Quiz Administration System</title>
+</head>
+<body>
+	<h1>Quiz Administration System</h1>
+	<h2>Login</h2>
+	<form id="login_form" method="post" action="student.php">
+	<p><input type="radio" name="usertype" id="sturadio" value="student" checked="true" onClick="stuMode(); redirect();" /> Student  <input type="radio" name="usertype" id="insradio" value="instructor" onClick="insMode(); redirect();" /> Instructor</p>
+	<p>Your Name: <input type="text" name="name" size="40" pattern="^\w[a-zA-Z\s]{1,39}$" required /></p>
+	<p id="instructorP">Instructor's Name: <input type="text" name="instructor" size="40" pattern="^\w[a-zA-Z\s]{1,39}$" required /></p>
+	<p style="display: none;" id="passwordP">Password: <input type="password" name="password" size="20" pattern="^[\w\d]{1,}$" /></p>
+	<p>Course: <input type="text" name="course" size="10" pattern="^\w[a-zA-Z0-9\s]{1,9}$" required /></p>
+	<p><abbr title="Must be a number between 1 and 99, inclusive.">Quiz Number:</abbr> <input type="text" name="quiz" size="2" pattern="[1-9]\d?" required /></p>
+	<input type="submit" value="Login" />
+	</form>
+</body>
+</html>
