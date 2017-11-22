@@ -33,7 +33,7 @@ if ($password != "xyzzy") {
 	print "<script>document.title = \"Login successful. Loading quiz generator...\";</script>";
 	$_SESSION["q_number"]=0;
 	
-	if(!file_exists(strtolower($instructor."/".$course))) { mkdir(strtolower("./".$instructor."/".$course),0744,true); }
+	if(!file_exists(strtolower($instructor."/".$course))) { mkdir(strtolower("./".$instructor."/".$course),0755,true); }
 
 	$filename = strtolower($instructor."/".$course)."/".$course."Quiz".$quiz.".html";
 	$_SESSION["filename"] = $filename;

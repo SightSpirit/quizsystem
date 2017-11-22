@@ -36,7 +36,7 @@
 			print "<h2>ERROR</h2>\n";
 			print "<p>Either you have found this page by mistake, or something went wrong when generating the quiz. Please <a href=\"login.html\">log in</a> as an instructor and repeat the process. We are sorry for the inconvenience.</p>";
 			print "<p>(If this is a recurring issue, please contact the systems administrator ASAP.)</p><br/><br/>\n";
-			print "<div>You should be redirected to the login page 10 seconds after pageload. (Link is above, just in case.)</div>";
+			print "<div>You should be redirected to the login page 15 seconds after pageload. (Link is above, just in case.)</div>";
 	} else {
 			print "<script>document.title = \"Quiz created. Redirecting...\";</script>\n";
 			print "<h2>Quiz Successfully Created</h2>\n";
